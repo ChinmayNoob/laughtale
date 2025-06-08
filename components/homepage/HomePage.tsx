@@ -82,7 +82,7 @@ export const HomePage = () => {
         },
         {
             src: '/sanji.png',
-            scale: scale5,
+            scale: scale9,
             styles: {
                 top: '-10vh',
                 left: '25vw',
