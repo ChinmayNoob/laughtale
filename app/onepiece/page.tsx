@@ -105,54 +105,65 @@ const OnePiecePage = () => {
     return () => clearTimeout(timer);
   }, [controls]);
 
-  // Homepage-style transform animations
-  const welcomeScale = useTransform(scrollYProgress, [0.2, 1], [0, 4]);
-  const welcomeOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
-
   // Portal-like rotation effect
   const portalRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
   const portalScale = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const portalOpacity = useTransform(scrollYProgress, [0, 0.95], [1, 0]);
 
-  // Create transforms for each arc section
-  const getArcTransforms = (index: number) => {
-    const totalArcs = arcs.length;
-    const sectionStart = index / totalArcs;
-    const sectionEnd = (index + 1) / totalArcs;
-    const sectionMid = (sectionStart + sectionEnd) / 2;
+  // Create transforms for each arc individually (cannot use .map with hooks)
+  const totalArcs = arcs.length;
 
-    return {
-      opacity: useTransform(
-        scrollYProgress,
-        [sectionStart - 0.1, sectionStart, sectionEnd, sectionEnd + 0.1],
-        [0, 1, 1, 0]
-      ),
-      scale: useTransform(
-        scrollYProgress,
-        [sectionStart, sectionMid, sectionEnd],
-        [0.8, 1, 0.8]
-      ),
-      textY: useTransform(
-        scrollYProgress,
-        [sectionStart, sectionStart + 0.1, sectionEnd - 0.1, sectionEnd],
-        [100, 0, 0, -100]
-      ),
-      textOpacity: useTransform(
-        scrollYProgress,
-        [sectionStart, sectionStart + 0.1, sectionEnd - 0.1, sectionEnd],
-        [0, 1, 1, 0]
-      ),
-      characterX: useTransform(
-        scrollYProgress,
-        [sectionStart, sectionStart + 0.1, sectionEnd - 0.1, sectionEnd],
-        [200, 0, 0, -200]
-      ),
-      characterOpacity: useTransform(
-        scrollYProgress,
-        [sectionStart, sectionStart + 0.1, sectionEnd - 0.1, sectionEnd],
-        [0, 1, 1, 0]
-      )
-    };
+  // Arc 0 transforms
+  const arc0Transforms = {
+    opacity: useTransform(scrollYProgress, [-0.1 / totalArcs, 0, 1 / totalArcs, 1.1 / totalArcs], [0, 1, 1, 0]),
+    scale: useTransform(scrollYProgress, [0, 0.5 / totalArcs, 1 / totalArcs], [0.8, 1, 0.8]),
+    textY: useTransform(scrollYProgress, [0, 0.1 / totalArcs, 0.9 / totalArcs, 1 / totalArcs], [100, 0, 0, -100]),
+    textOpacity: useTransform(scrollYProgress, [0, 0.1 / totalArcs, 0.9 / totalArcs, 1 / totalArcs], [0, 1, 1, 0]),
+    characterX: useTransform(scrollYProgress, [0, 0.1 / totalArcs, 0.9 / totalArcs, 1 / totalArcs], [200, 0, 0, -200]),
+    characterOpacity: useTransform(scrollYProgress, [0, 0.1 / totalArcs, 0.9 / totalArcs, 1 / totalArcs], [0, 1, 1, 0])
   };
+
+  // Arc 1 transforms
+  const arc1Transforms = {
+    opacity: useTransform(scrollYProgress, [(1 - 0.1) / totalArcs, 1 / totalArcs, 2 / totalArcs, (2 + 0.1) / totalArcs], [0, 1, 1, 0]),
+    scale: useTransform(scrollYProgress, [1 / totalArcs, 1.5 / totalArcs, 2 / totalArcs], [0.8, 1, 0.8]),
+    textY: useTransform(scrollYProgress, [1 / totalArcs, 1.1 / totalArcs, 1.9 / totalArcs, 2 / totalArcs], [100, 0, 0, -100]),
+    textOpacity: useTransform(scrollYProgress, [1 / totalArcs, 1.1 / totalArcs, 1.9 / totalArcs, 2 / totalArcs], [0, 1, 1, 0]),
+    characterX: useTransform(scrollYProgress, [1 / totalArcs, 1.1 / totalArcs, 1.9 / totalArcs, 2 / totalArcs], [200, 0, 0, -200]),
+    characterOpacity: useTransform(scrollYProgress, [1 / totalArcs, 1.1 / totalArcs, 1.9 / totalArcs, 2 / totalArcs], [0, 1, 1, 0])
+  };
+
+  // Arc 2 transforms
+  const arc2Transforms = {
+    opacity: useTransform(scrollYProgress, [(2 - 0.1) / totalArcs, 2 / totalArcs, 3 / totalArcs, (3 + 0.1) / totalArcs], [0, 1, 1, 0]),
+    scale: useTransform(scrollYProgress, [2 / totalArcs, 2.5 / totalArcs, 3 / totalArcs], [0.8, 1, 0.8]),
+    textY: useTransform(scrollYProgress, [2 / totalArcs, 2.1 / totalArcs, 2.9 / totalArcs, 3 / totalArcs], [100, 0, 0, -100]),
+    textOpacity: useTransform(scrollYProgress, [2 / totalArcs, 2.1 / totalArcs, 2.9 / totalArcs, 3 / totalArcs], [0, 1, 1, 0]),
+    characterX: useTransform(scrollYProgress, [2 / totalArcs, 2.1 / totalArcs, 2.9 / totalArcs, 3 / totalArcs], [200, 0, 0, -200]),
+    characterOpacity: useTransform(scrollYProgress, [2 / totalArcs, 2.1 / totalArcs, 2.9 / totalArcs, 3 / totalArcs], [0, 1, 1, 0])
+  };
+
+  // Arc 3 transforms
+  const arc3Transforms = {
+    opacity: useTransform(scrollYProgress, [(3 - 0.1) / totalArcs, 3 / totalArcs, 4 / totalArcs, (4 + 0.1) / totalArcs], [0, 1, 1, 0]),
+    scale: useTransform(scrollYProgress, [3 / totalArcs, 3.5 / totalArcs, 4 / totalArcs], [0.8, 1, 0.8]),
+    textY: useTransform(scrollYProgress, [3 / totalArcs, 3.1 / totalArcs, 3.9 / totalArcs, 4 / totalArcs], [100, 0, 0, -100]),
+    textOpacity: useTransform(scrollYProgress, [3 / totalArcs, 3.1 / totalArcs, 3.9 / totalArcs, 4 / totalArcs], [0, 1, 1, 0]),
+    characterX: useTransform(scrollYProgress, [3 / totalArcs, 3.1 / totalArcs, 3.9 / totalArcs, 4 / totalArcs], [200, 0, 0, -200]),
+    characterOpacity: useTransform(scrollYProgress, [3 / totalArcs, 3.1 / totalArcs, 3.9 / totalArcs, 4 / totalArcs], [0, 1, 1, 0])
+  };
+
+  // Arc 4 transforms
+  const arc4Transforms = {
+    opacity: useTransform(scrollYProgress, [(4 - 0.1) / totalArcs, 4 / totalArcs, 5 / totalArcs, (5 + 0.1) / totalArcs], [0, 1, 1, 0]),
+    scale: useTransform(scrollYProgress, [4 / totalArcs, 4.5 / totalArcs, 5 / totalArcs], [0.8, 1, 0.8]),
+    textY: useTransform(scrollYProgress, [4 / totalArcs, 4.1 / totalArcs, 4.9 / totalArcs, 5 / totalArcs], [100, 0, 0, -100]),
+    textOpacity: useTransform(scrollYProgress, [4 / totalArcs, 4.1 / totalArcs, 4.9 / totalArcs, 5 / totalArcs], [0, 1, 1, 0]),
+    characterX: useTransform(scrollYProgress, [4 / totalArcs, 4.1 / totalArcs, 4.9 / totalArcs, 5 / totalArcs], [200, 0, 0, -200]),
+    characterOpacity: useTransform(scrollYProgress, [4 / totalArcs, 4.1 / totalArcs, 4.9 / totalArcs, 5 / totalArcs], [0, 1, 1, 0])
+  };
+
+  const arcTransforms = [arc0Transforms, arc1Transforms, arc2Transforms, arc3Transforms, arc4Transforms];
 
   return (
     <main ref={container} className="h-[600vh] relative bg-black">
@@ -220,7 +231,7 @@ const OnePiecePage = () => {
           style={{
             scale: portalScale,
             rotateZ: portalRotate,
-            opacity: useTransform(scrollYProgress, [0, 0.95], [1, 0])
+            opacity: portalOpacity
           }}
           className="absolute inset-0 flex items-center justify-center z-20"
         >
@@ -236,7 +247,7 @@ const OnePiecePage = () => {
 
         {/* Arc Progression with homepage-style transforms */}
         {arcs.map((arc, index) => {
-          const transforms = getArcTransforms(index);
+          const transforms = arcTransforms[index];
 
           return (
             <motion.div
