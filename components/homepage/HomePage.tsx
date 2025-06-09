@@ -1,15 +1,12 @@
 "use client"
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
 import Image from 'next/image';
 import { useScroll, useTransform, motion } from 'motion/react';
-import { useRouter } from 'next/navigation';
 import { cn } from '@/utils/common';
 
 export const HomePage = () => {
     useSmoothScroll();
-    const [isHovered, setHovered] = useState(false);
-    const router = useRouter();
     const container = useRef(null);
 
     const { scrollYProgress } = useScroll({
@@ -184,25 +181,12 @@ export const HomePage = () => {
                                                 />
                                             </motion.div>
                                             <motion.div
-                                                role="button"
-                                                aria-label="click to visit one piece world"
-                                                onClick={() => {
-                                                    router.push('/onepiece');
-                                                }}
-                                                className="relative w-[12vw] h-[18vh] cursor-pointer"
+                                                className="relative w-[12vw] h-[18vh]"
                                                 style={{ scale: logoScale, y: -20 }}
-                                                onMouseOver={() => setHovered(true)}
-                                                onMouseLeave={() => setHovered(false)}
-                                                variants={{
-                                                    active: { scale: 1.05 },
-                                                    inactive: { scale: 1 },
-                                                }}
-                                                animate={isHovered ? "active" : "inactive"}
-                                                title="Click to visit one piece world"
                                             >
                                                 <Image
                                                     src="/strawhats.png"
-                                                    alt="clickable logo"
+                                                    alt="one piece logo"
                                                     fill
                                                 />
                                             </motion.div>
