@@ -48,13 +48,13 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/ace.png',
+            src: '/ace-2.png',
             scale: scale5,
             styles: {
                 top: '-32vh',
                 left: '-15vw',
-                width: '10vw',
-                height: '25vh',
+                width: '18vw',
+                height: '27vh',
             }
         },
         {
