@@ -176,7 +176,7 @@ export const HomePage = () => {
                                         <div className="flex flex-col items-center">
                                             <motion.div className="relative w-[6vw] h-[2vw]" style={{ scale: logoNameScale, y: logoNameY }}>
                                                 <Image
-                                                    src="/one-piece-logo.png"
+                                                    src="/logo/one-piece-logo.png"
                                                     alt=""
                                                     fill
                                                 />
