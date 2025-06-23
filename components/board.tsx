@@ -63,7 +63,7 @@ function Tile({ tile, direction }: TileProps) {
     const isIsland = tile.type !== "regular";
 
     const isBigIsland = tile.type === "amazonlily" || tile.type === "wholecake" || tile.type === "wano" || tile.type === "waterseven";
-    const hasJollyRogerStop = TILE_POSITION.JOLLYROGER_STOP.includes(tile.position as any);
+    const hasJollyRogerStop = (TILE_POSITION.JOLLYROGER_STOP as readonly number[]).includes(tile.position);
     return (
         <div
             className={cn(
