@@ -19,6 +19,7 @@ interface GameState {
     location: Location;
     panel: Panel;
     state: "idle" | "playing" | "game-over";
+    characterName: string;
 
     //Actions
 
@@ -48,6 +49,7 @@ function initGameState() {
         currentCard: null,
         location: getLocationFromPosition(getPositionFromPirateType(spawnConfig.pirateType)),
         panel: "move" as const,
+        characterName: spawnConfig.name,
     }
 }
 
@@ -199,7 +201,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     },
 
     changeState: (state: "idle" | "playing" | "game-over") => set({ state }),
-    
+
     resetGame: () => set(initGameState()),
 
 }))

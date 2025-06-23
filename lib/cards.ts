@@ -45,7 +45,7 @@ export interface SpawnConfig {
 export const spawnConfigs: SpawnConfig[] = [
     {
         id: "rookie",
-        name: "Mugiwara",
+        name: "Monkey D. Luffy",
         pirateType: "rookie",
         island: "amazonlily",
         initialBerries: 80,
@@ -61,7 +61,7 @@ export const spawnConfigs: SpawnConfig[] = [
     },
     {
         id: "warlord",
-        name: "Dracule Mihawk",
+        name: "Gol.D.Buggy",
         pirateType: "warlord",
         island: "wholecake",
         initialBerries: 120,
@@ -69,7 +69,7 @@ export const spawnConfigs: SpawnConfig[] = [
     },
     {
         id: "emperor",
-        name: "Red Hair Shanks",
+        name: "Kaido",
         pirateType: "emperor",
         island: "wano",
         initialBerries: 150,

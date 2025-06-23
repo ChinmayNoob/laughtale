@@ -4,6 +4,7 @@ import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
 import Image from 'next/image';
 import { useScroll, useTransform, motion } from 'motion/react';
 import { cn } from '@/utils/common';
+import Link from 'next/link';
 
 export const HomePage = () => {
     useSmoothScroll();
@@ -184,11 +185,13 @@ export const HomePage = () => {
                                                 className="relative w-[12vw] h-[18vh]"
                                                 style={{ scale: logoScale, y: -20, x: -5 }}
                                             >
-                                                <Image
-                                                    src="/hero/strawhats.png"
-                                                    alt="one piece logo"
-                                                    fill
-                                                />
+                                                <Link href="/game">
+                                                    <Image
+                                                        src="/hero/strawhats.png"
+                                                        alt="one piece logo"
+                                                        fill
+                                                    />
+                                                </Link>
                                             </motion.div>
                                         </div>
                                     </div>
