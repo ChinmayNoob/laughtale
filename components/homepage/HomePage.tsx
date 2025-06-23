@@ -33,12 +33,12 @@ export const HomePage = () => {
 
     const pictures = [
         {
-            src: '/wano.png',
+            src: '/hero/wano.png',
             scale: welcomeScale,
             opacity: welcomeOpacity,
         },
         {
-            src: '/luffy.png',
+            src: '/characters/luffy.png',
             scale: scale5,
             styles: {
                 top: '-35vh',
@@ -48,7 +48,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/ace-2.png',
+            src: '/characters/ace.png',
             scale: scale5,
             styles: {
                 top: '-32vh',
@@ -58,7 +58,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/shanks.png',
+            src: '/characters/shanks.png',
             scale: scale6,
             styles: {
                 top: '-10vh',
@@ -68,7 +68,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/zoro.png',
+            src: '/characters/zoro.png',
             scale: scale5,
             styles: {
                 top: '-32vh',
@@ -78,7 +78,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/sanji.png',
+            src: '/characters/sanji.png',
             scale: scale9,
             styles: {
                 top: '-10vh',
@@ -88,7 +88,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/law.png',
+            src: '/characters/law.png',
             scale: scale5,
             styles: {
                 top: '15vh',
@@ -98,7 +98,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/kidd.png',
+            src: '/characters/kidd.png',
             scale: scale6,
             styles: {
                 top: '35vh',
@@ -108,7 +108,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/sabo.png',
+            src: '/characters/sabo.png',
             scale: scale8,
             styles: {
                 top: '17vh',
@@ -118,7 +118,7 @@ export const HomePage = () => {
             }
         },
         {
-            src: '/ussop.png',
+            src: '/characters/ussop.png',
             scale: scale5,
             styles: {
                 top: '35vh',
@@ -134,7 +134,7 @@ export const HomePage = () => {
             <div className="sticky overflow-hidden top-0 h-screen bg-black">
                 <motion.div className="relative w-full h-screen" style={{ scale: bgScale, opacity: 0.7 }}>
                     <Image
-                        src="/wano-day.jpg"
+                        src="/hero/wano-day.jpg"
                         alt=""
                         fill
                     />
@@ -146,7 +146,7 @@ export const HomePage = () => {
                 >
                     <div className="relative w-[20vw] h-[35vh]">
                         <Image
-                            src="/sunny.png"
+                            src="/ship/sunny.png"
                             alt=""
                             fill
                         />
@@ -182,10 +182,10 @@ export const HomePage = () => {
                                             </motion.div>
                                             <motion.div
                                                 className="relative w-[12vw] h-[18vh]"
-                                                style={{ scale: logoScale, y: -20 }}
+                                                style={{ scale: logoScale, y: -20, x: -5 }}
                                             >
                                                 <Image
-                                                    src="/strawhats.png"
+                                                    src="/hero/strawhats.png"
                                                     alt="one piece logo"
                                                     fill
                                                 />
