@@ -1,6 +1,8 @@
 'use client'
 
 import { Board } from "@/components/board";
+import { CardReveal } from "@/components/card-reveal";
+import { Controls } from "@/components/controller";
 import { StartGame } from "@/components/start-game";
 import { useGameStore } from "@/lib/game-store"
 import { AnimatePresence, motion } from "motion/react";
@@ -42,6 +44,8 @@ const Game = () => {
                 className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover -z-10"
             />
             <Board />
+            <Controls />
+            <CardReveal />
         </main>
     );
 };

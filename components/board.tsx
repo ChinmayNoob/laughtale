@@ -13,7 +13,7 @@ export function Board() {
     const bottom = board.slice(12, 19).reverse();
     const left = board.slice(19).reverse();
     return (
-        <div className="inline-block space-y-2.5 relative">
+        <div className="inline-block space-y-2.5 relative -mt-20">
             <MarineFord />
             {/* Top row */}
             <div className="flex justify-center gap-2.5">
