@@ -44,7 +44,7 @@ function initGameState() {
     return {
         state: "idle" as const,
         berries: spawnConfig.initialBerries,
-        poneglyph: 2,
+        poneglyph: 20,
         position: getPositionFromPirateType(spawnConfig.pirateType),
         deck: createDeck(),
         currentCard: null,
