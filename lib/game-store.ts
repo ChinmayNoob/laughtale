@@ -5,6 +5,7 @@ import { create } from "zustand";
 import { closeCardEvent, drawnCardEvent } from "./events";
 
 export const PANEL_TRANSITION_DURATION = 3000;
+export const PANEL_TRANSITION_DURATION_CARD_REVEAL = 5000;
 
 type Panel = "move" | "effects" | "action" | "probability" | "choice";
 

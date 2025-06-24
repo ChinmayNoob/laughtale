@@ -3,6 +3,7 @@
 import { Board } from "@/components/board";
 import { CardReveal } from "@/components/card-reveal";
 import { Controls } from "@/components/controller";
+import { FinalWar } from "@/components/final-war";
 import { StartGame } from "@/components/start-game";
 import { useGameStore } from "@/lib/game-store"
 import { AnimatePresence, motion } from "motion/react";
@@ -46,6 +47,7 @@ const Game = () => {
             <Board />
             <Controls />
             <CardReveal />
+            <FinalWar />
         </main>
     );
 };

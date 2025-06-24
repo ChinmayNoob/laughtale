@@ -27,12 +27,12 @@ export const Panel = () => {
 
     return (
         <div className="relative">
-            <div className="relative z-20 w-80 h-full bg-white/20 backdrop-blur-xl border-l border-white/30">
+            <div className="relative z-20 w-80 h-32 bg-white/20 backdrop-blur-xl border-l border-white/30">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
 
                 <AnimatePresence mode="wait">
                     <motion.div
-                        className="relative flex flex-col items-center justify-center h-full px-2 mt-2"
+                        className="relative flex flex-col items-center justify-center h-full px-2"
                         key={panelType}
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -463,11 +463,18 @@ const JollyRogerStopPanel = () => {
         return `Need ${4 - poneglyph} more`
     }, [poneglyph]);
 
+    const handleJollyRogerClick = () => {
+        console.log('Jolly Roger button clicked! Poneglyph:', poneglyph);
+        if (poneglyph >= 4) {
+            takeJollyrogerEvent();
+        }
+    };
+
     return (
         <AnimatePresence initial={false}>
             {hasJollyRogerStop && (
                 <motion.div
-                    className="absolute -left-30 top-12 w-32 flex items-center px-4 justify-between bg-white/90 backdrop-blur-xl rounded-2xl h-16 border border-white/50 shadow-lg z-50"
+                    className="absolute right-10 top-12 w-40 flex items-center px-4 justify-between bg-white/90 backdrop-blur-xl rounded-2xl h-20 border border-white/50 shadow-lg z-50 pointer-events-auto"
                     animate={{
                         x: 0,
                         transition: { delay: 1, duration: 0.4, type: "spring", bounce: 0 },
@@ -492,10 +499,11 @@ const JollyRogerStopPanel = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1.4 }}
+                        className="relative z-10"
                     >
                         <Button
-                            className="text-xs px-1 py-1 shadow-lg"
-                            onClick={takeJollyrogerEvent}
+                            className="text-sm px-3 py-2 shadow-lg min-w-[40px] min-h-[40px] cursor-pointer hover:scale-105 transition-transform"
+                            onClick={handleJollyRogerClick}
                             disabled={poneglyph < 4}
                         >
                             🏴‍☠️
