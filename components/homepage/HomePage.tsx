@@ -147,7 +147,7 @@ export const HomePage = () => {
                 >
                     <div className="relative w-[20vw] h-[35vh]">
                         <Image
-                            src="/ship/sunny.png"
+                            src="/ship/sunny-2.png"
                             alt=""
                             fill
                         />
@@ -192,6 +192,13 @@ export const HomePage = () => {
                                                         fill
                                                     />
                                                 </Link>
+                                            </motion.div>
+                                            <motion.div className="relative w-[4vw] h-[3vh]" style={{ scale: logoScale, y: -2 }}>
+                                                <Image
+                                                    src="/hero/star.png"
+                                                    alt="start"
+                                                    fill
+                                                />
                                             </motion.div>
                                         </div>
                                     </div>

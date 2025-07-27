@@ -23,7 +23,7 @@ export const Controls = () => {
             className="fixed z-30 flex h-32 mt-auto -translate-x-1/2 bottom-6 left-1/2"
         >
             {/* Glassmorphism background */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-xl border border-white/30 rounded-3xl shadow-2xl" />
+            <div className="absolute inset-0 bg-white backdrop-blur-xl rounded-3xl shadow-2xl" />
 
             {/* Inner shadow for depth */}
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-3xl" />
@@ -31,6 +31,7 @@ export const Controls = () => {
             <div className="relative flex rounded-3xl">
                 <div className="flex flex-col w-24 h-full overflow-hidden">
                     <Berries />
+                    <div className="w-full h-px bg-black/20 my-0.5" />
                     <Poneglyphs />
                 </div>
                 <div className="overflow-hidden">
@@ -63,13 +64,13 @@ const Berries = () => {
 
     return (
         <div
-            className="flex flex-col items-center w-full overflow-hidden border-b group/gem border-white/20 h-1/2 relative"
+            className="flex flex-col items-center w-full overflow-hidden group/gem h-1/2 relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             {/* Animated background gradient */}
             <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-400/20 to-red-400/20"
+                className="absolute inset-0 bg-gradient-to-br from-yellow-400/40 via-orange-400/40 to-red-400/40"
                 animate={{
                     opacity: isHovered ? 0.8 : 0.3,
                     scale: isHovered ? 1.05 : 1
@@ -124,7 +125,7 @@ const Berries = () => {
 
                 {/* Glowing effect */}
                 <motion.div
-                    className="absolute inset-0 inset-x-1 bg-gradient-to-t from-yellow-400/30 to-transparent rounded-full blur-sm"
+                    className="absolute inset-0 inset-x-1 bg-gradient-to-t from-yellow-400/50 to-transparent rounded-full blur-sm"
                     animate={{ opacity: isHovered ? 0 : 0.6 }}
                     transition={{ duration: 0.3 }}
                 />
@@ -160,7 +161,7 @@ const Poneglyphs = () => {
         >
             {/* Animated background gradient */}
             <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-indigo-400/20"
+                className="absolute inset-0 bg-gradient-to-br from-blue-400/40 via-purple-400/40 to-indigo-400/40"
                 animate={{
                     opacity: isHovered ? 0.8 : 0.3,
                     scale: isHovered ? 1.05 : 1
@@ -243,7 +244,7 @@ const Cards = () => {
 
     return (
         <div
-            className="relative flex flex-col items-center justify-center w-48 h-full border-l border-white/20 rounded-r-3xl bg-gradient-to-br from-slate-100/30 via-blue-50/20 to-indigo-100/30 backdrop-blur-sm"
+            className="relative flex flex-col items-center justify-center w-48 h-full border-l border-white/40 rounded-r-3xl bg-gradient-to-br from-slate-100/70 via-blue-50/0 to-indigo-100/30 backdrop-blur-sm"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

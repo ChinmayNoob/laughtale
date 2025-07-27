@@ -40,7 +40,7 @@ const Game = () => {
     return (
         <main className="flex flex-col items-center min-h-screen gap-8 pt-40 pb-10">
             <img
-                src="/common/bg.webp"
+                src="/common/bg.png"
                 alt="background"
                 className="absolute inset-0 w-full h-full bg-center bg-no-repeat bg-cover -z-10"
             />

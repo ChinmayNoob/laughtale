@@ -76,13 +76,13 @@ function Tile({ tile, direction }: TileProps) {
             {hasJollyRogerStop && <JollyRogerStop direction={direction} />}
             <div
                 className={cn(
-                    "size-full bg-[#FFF9DE] relative flex items-center justify-center",
+                    "size-full bg-green-400 relative flex items-center justify-center",
                     tile.size === "lg" ? "rounded-3xl" : "rounded-2xl",
-                    "shadow-[inset_0px_2px_4px_0px_rgba(255,255,255,0.25),inset_0px_-2px_4px_0px_rgba(237,219,147,1)]"
+                    "shadow-[inset_0px_2px_4px_0px_rgba(255,255,255,0.25),inset_0px_-2px_4px_0px_rgba(22,163,74,1)]"
                 )}
             >
                 {!isIsland && (
-                    <div className="text-2xl font-bold text-[#F0E5B7] italic">
+                    <div className="text-2xl font-bold text-green-600 italic">
                         {location}
                     </div>
                 )}
@@ -121,7 +121,7 @@ function JollyRogerStop({ direction }: JollyRogerStopProps) {
     return (
         <div
             className={cn(
-                "absolute flex items-center justify-center size-16 bg-[#D9E682] rounded-2xl ",
+                "absolute flex items-center justify-center size-16 bg-green-400 rounded-2xl ",
                 direction === "left" &&
                 "-right-2.5 translate-x-full group-hover/tile:-translate-y-1",
                 direction === "right" &&
@@ -140,7 +140,7 @@ function JollyRogerStop({ direction }: JollyRogerStopProps) {
 
 function MarineFord() {
     return (
-        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 size-52 bg-[#FEF5CA]/40 rounded-4xl border-[6px] border-[#B4C957] flex items-center justify-center">
+        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 size-52 rounded-4xl flex items-center justify-center">
             <img src="/islands/marineford.png" alt="Marineford" className="size-60" />
         </div>
     )

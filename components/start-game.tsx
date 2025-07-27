@@ -8,6 +8,7 @@ import { BaseCardEffect, getSpawnConfig } from "@/lib/cards";
 import { cn } from "@/utils/common";
 import { PirateType } from "@/types/game";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export const getEffectColor = (type: BaseCardEffect["type"]) => {
@@ -131,6 +132,24 @@ const Step1 = ({ onNextStep }: { onNextStep: () => void }) => {
             >
                 Ready to become the next Pirate King?
             </motion.p>
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+            >
+                <Link
+                    href="/"
+                    className="text-xl font-semibold font-pp-editorial px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white rounded-2xl shadow-lg hover:shadow-xl flex items-center gap-3 transform hover:scale-105 transition-all duration-200"
+                >
+                    <Image
+                        src="/common/skull-logo.png"
+                        alt="skull logo"
+                        width={36}
+                        height={36}
+                    />
+                    Back to Home
+                </Link>
+            </motion.div>
         </div>
     );
 };
